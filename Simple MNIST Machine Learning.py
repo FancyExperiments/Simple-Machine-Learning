@@ -24,11 +24,13 @@ model = tf.keras.Sequential([
 ])
 
 # Kompilieren des Modells
+print('Compiling, please wait...')
 model.compile(optimizer='rmsprop',
               loss='categorical_crossentropy',
               metrics=['accuracy'])
 
 # Training des Modells
+print('Training, please wait...')
 model.fit(train_images, train_labels, epochs=5, batch_size=128)
 
 # Bewertung des Modells
