@@ -9,7 +9,7 @@ def sigmoid_derivative(x):
 # -------------------------------------
 # Hyperparameter:
 # -------------------------------------
-# Anzahl der Neuronen
+# Anzahl Neuronen in der Hidden Ebene
 hidden_neurons = 10
 
 # Anzahl Epochen
