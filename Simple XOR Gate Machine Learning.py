@@ -49,7 +49,7 @@ for iteration in range(epochs):
 
 # Test-Eingabewerte für das XOR-Problem
 input_values = [np.array([0, 0]), np.array([0, 1]), np.array([1, 0]), np.array([1, 1])]
-expected_outputs = [0, 1, 1, 0]
+expected_outputs = training_outputs
 
 # Neuronales Netzwerk testen
 for new_input, expected in zip(input_values, expected_outputs):
