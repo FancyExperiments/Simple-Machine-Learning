@@ -1,1 +1,1 @@
-Just collecting some Machine Learning Scripts for Python in this repository, for learning purposes.
+Just collecting some Simple Machine Learning Scripts for Python in this repository, to play around with the Hyperparameters for learning purposes.
