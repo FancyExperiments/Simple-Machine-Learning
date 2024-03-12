@@ -6,7 +6,7 @@ def sigmoid(x):
 def sigmoid_derivative(x):
     return x * (1 - x)
 
-# Eingabedaten für das XOR-Gatter
+# Trainingsdaten für das XOR-Gatter
 training_inputs = np.array([[0,0],
                             [0,1],
                             [1,0],
