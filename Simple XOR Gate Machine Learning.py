@@ -35,7 +35,7 @@ training_outputs = np.array([[0],
 # Gewichte initialisieren
 np.random.seed(1)
 
-# Zufällige Gewichte für die Verbindung zwischen den Hidden- und Output-Neuronen
+# Zufällige Startgewichte für die Verbindung zwischen den Hidden- und Output-Neuronen
 weights_input_hidden = 2 * np.random.random((2, hidden_neurons)) - 1
 weights_hidden_output = 2 * np.random.random((hidden_neurons, 1)) - 1
 
