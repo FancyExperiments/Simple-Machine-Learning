@@ -47,7 +47,14 @@ for iteration in range(epochs):
 # print(weights_input_hidden)
 # print(weights_hidden_output)
 
-new_input = np.array([0, 1])
-hidden_layer = sigmoid(np.dot(new_input, weights_input_hidden))
-output = sigmoid(np.dot(hidden_layer, weights_hidden_output))
-print("Neues Beispiel [0, 1] -> Ausgabe des neuronalen Netzes: ", round(output[0], 3))
+# Test-Eingabewerte für das XOR-Problem
+input_values = [np.array([0, 0]), np.array([0, 1]), np.array([1, 0]), np.array([1, 1])]
+expected_outputs = [0, 1, 1, 0]
+
+# Neuronales Netzwerk testen
+for new_input, expected in zip(input_values, expected_outputs):
+    hidden_layer = sigmoid(np.dot(new_input, weights_input_hidden))
+    output = sigmoid(np.dot(hidden_layer, weights_hidden_output))
+    print(f"XOR {new_input} -> Ausgabe des neuronalen Netzes: ", round(output[0], 3))
+    print(f"Erwartete Ausgabe: {expected}")
+    print("\r")
