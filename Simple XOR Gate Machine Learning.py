@@ -6,6 +6,18 @@ def sigmoid(x):
 def sigmoid_derivative(x):
     return x * (1 - x)
 
+# -------------------------------------
+# Hyperparameter:
+# -------------------------------------
+# Anzahl der Neuronen
+hidden_neurons = 10
+
+# Anzahl Epochen
+epochs = 10000
+
+# Lern-Rate
+learning_rate = 0.1
+
 # Trainingsdaten für das XOR-Gatter
 training_inputs = np.array([[0,0],
                             [0,1],
@@ -18,21 +30,14 @@ training_outputs = np.array([[0],
                              [1],
                              [0]])
 
+# -------------------------------------
+
 # Gewichte initialisieren
 np.random.seed(1)
-
-# Anzahl der Neuronen
-hidden_neurons = 10
 
 # Zufällige Gewichte für die Verbindung zwischen den Hidden- und Output-Neuronen
 weights_input_hidden = 2 * np.random.random((2, hidden_neurons)) - 1
 weights_hidden_output = 2 * np.random.random((hidden_neurons, 1)) - 1
-
-# Anzahl Epochen
-epochs = 10000
-
-# Lern-Rate
-learning_rate = 0.1
 
 # Schleife für die Epochen
 for iteration in range(epochs):
@@ -40,19 +45,19 @@ for iteration in range(epochs):
     hidden_layer = sigmoid(np.dot(input_layer, weights_input_hidden))
     output_layer = sigmoid(np.dot(hidden_layer, weights_hidden_output))
 
-    # Berechnung der Fehlerwerte
+  # Berechnung der Fehlerwerte
     output_error = training_outputs - output_layer
     output_adjustments = output_error * sigmoid_derivative(output_layer)
 
-    # Berechnung der Fehlerwerte für den Hidden-Layer
+  # Berechnung der Fehlerwerte für den Hidden-Layer
     hidden_error = output_adjustments.dot(weights_hidden_output.T)
     hidden_adjustments = hidden_error * sigmoid_derivative(hidden_layer)
 
-    # Aktualisierung der Gewichte
+  # Aktualisierung der Gewichte
     weights_hidden_output += learning_rate * hidden_layer.T.dot(output_adjustments)
     weights_input_hidden += learning_rate * input_layer.T.dot(hidden_adjustments)
 
-    # Ausgabe der aktuellen Lernrate
+  # Ausgabe der aktuellen Lernrate
     if iteration % 500 == 0:
         print(f"Epoche {iteration} - Fehlerrate: {np.mean(np.abs(output_error)):.3f}")
 
@@ -60,7 +65,7 @@ for iteration in range(epochs):
 # print(weights_input_hidden)
 # print(weights_hidden_output)
 
-# Testwerte für das XOR-Problem
+# Testwerte für das XOR-Probelm
 input_values = training_inputs
 expected_outputs = training_outputs
 
@@ -71,5 +76,3 @@ for new_input, expected in zip(input_values, expected_outputs):
     print(f"XOR {new_input} -> Ausgabe des neuronalen Netzes: ", round(output[0], 3))
     print(f"Erwartete Ausgabe: {expected}")
     print("\r")
-  
-
