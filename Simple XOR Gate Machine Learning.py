@@ -45,19 +45,19 @@ for iteration in range(epochs):
     hidden_layer = sigmoid(np.dot(input_layer, weights_input_hidden))
     output_layer = sigmoid(np.dot(hidden_layer, weights_hidden_output))
 
-  # Berechnung der Fehlerwerte
+    # Berechnung der Fehlerwerte
     output_error = training_outputs - output_layer
     output_adjustments = output_error * sigmoid_derivative(output_layer)
 
-  # Berechnung der Fehlerwerte für den Hidden-Layer
+    # Berechnung der Fehlerwerte für den Hidden-Layer
     hidden_error = output_adjustments.dot(weights_hidden_output.T)
     hidden_adjustments = hidden_error * sigmoid_derivative(hidden_layer)
 
-  # Aktualisierung der Gewichte
+    # Aktualisierung der Gewichte
     weights_hidden_output += learning_rate * hidden_layer.T.dot(output_adjustments)
     weights_input_hidden += learning_rate * input_layer.T.dot(hidden_adjustments)
 
-  # Ausgabe der aktuellen Lernrate
+    # Ausgabe der aktuellen Lernrate
     if iteration % 500 == 0:
         print(f"Epoche {iteration} - Fehlerrate: {np.mean(np.abs(output_error)):.3f}")
 
