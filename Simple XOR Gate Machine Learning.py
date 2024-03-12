@@ -60,7 +60,7 @@ for iteration in range(epochs):
 # print(weights_input_hidden)
 # print(weights_hidden_output)
 
-# Test-Eingabewerte für das XOR-Problem
+# Testwerte
 input_values = training_inputs
 expected_outputs = training_outputs
 
