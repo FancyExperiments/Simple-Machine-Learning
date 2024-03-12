@@ -16,6 +16,11 @@ hidden_neurons = 10
 epochs = 10000
 
 # Lern-Rate
+# Höhere Werte als 0.1 würden zwar in
+# diesem Beispiel zu deutlich genaueren
+# Ergebnisse führen, es ist in realen
+# Anwendungen aber davon abzuraten
+# (Overshooting - erschwert Training)
 learning_rate = 0.1
 
 # Trainingsdaten für das XOR-Gatter
