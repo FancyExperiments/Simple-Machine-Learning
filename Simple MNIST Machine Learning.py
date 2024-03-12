@@ -3,7 +3,7 @@ from tensorflow.keras.datasets import mnist
 import matplotlib.pyplot as plt
 
 # Das MNIST Modell dient dazu
-# handgeschrieben Zahlen zu erkennen
+# handgeschriebene Zahlen zu erkennen
 
 # Laden des Datensatzes
 (train_images, train_labels), (test_images, test_labels) = mnist.load_data()
