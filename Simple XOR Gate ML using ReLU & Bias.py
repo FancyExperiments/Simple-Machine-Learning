@@ -69,10 +69,9 @@ for iteration in range(epochs):
     )
 
     weights_hidden_output += weight_change_output
-
     weights_input_hidden += weight_change_hidden
+   
     bias_hidden += learning_rate * np.sum(hidden_adjustments, axis=0, keepdims=True)
-
     bias_output += learning_rate * np.sum(output_adjustments, axis=0, keepdims=True)
 
     if iteration % 50 == 0:
