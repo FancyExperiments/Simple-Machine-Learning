@@ -1,5 +1,3 @@
-
-# Import required libraries
 import numpy as np
 
 # Define input and output values for AND operation
